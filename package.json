@@ -1,0 +1,42 @@
+{
+  "name": "luna-design-framework",
+  "version": "1.0.0",
+  "description": "Luna Design Framework - Customized Bootstrap 5 Template & UI Kit for LunaSoft Platform",
+  "main": "index.html",
+  "scripts": {
+    "build": "gulp",
+    "demo": "echo \"for Vercel static deployment\" && exit 0"
+  },
+  "author": "Md Touhidul Islam (Prince)",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
+    "browser-sync": "^2.29.1",
+    "del": "^6.1.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-rollup": "^2.17.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "sass": "^1.62.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.3"
+  },
+  "browserslist": [
+    ">= 0.5%",
+    "last 2 major versions",
+    "not dead",
+    "Chrome >= 60",
+    "Firefox >= 60",
+    "Firefox ESR",
+    "iOS >= 12",
+    "Safari >= 12",
+    "Android >= 8",
+    "not Explorer <= 11"
+  ]
+}

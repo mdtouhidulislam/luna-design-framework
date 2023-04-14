@@ -1,0 +1,128 @@
+//
+// Headings
+//
+.#{$prefix}h1 {
+  @extend h1;
+}
+
+.#{$prefix}h2 {
+  @extend h2;
+}
+
+.#{$prefix}h3 {
+  @extend h3;
+}
+
+.#{$prefix}h4 {
+  @extend h4;
+}
+
+.#{$prefix}h5 {
+  @extend h5;
+}
+
+.#{$prefix}h6 {
+  @extend h6;
+}
+
+// Headings line height
+h4, .#{$prefix}h4, .#{$prefix}fs-4,
+h5, .#{$prefix}h5, .#{$prefix}fs-5,
+h6, .#{$prefix}h6, .#{$prefix}fs-6 { line-height: $line-height-sm; }
+
+
+// Link inside headings
+h1, .#{$prefix}h1, h2, .#{$prefix}h2, h3, .#{$prefix}h3,
+h4, .#{$prefix}h4, h5, .#{$prefix}h5, h6, .#{$prefix}h6 {
+  > a {
+    color: var(--#{$prefix}heading-link-color);
+    text-decoration: none;
+    &:hover {
+      color: var(--#{$prefix}heading-link-hover-color);
+    }
+  }
+}
+
+// Description lists
+dt {
+    color: var(--#{$prefix}heading-color);
+}
+
+.#{$prefix}lead {
+  @include font-size($lead-font-size);
+  font-weight: $lead-font-weight;
+}
+
+// Type display classes
+@each $display, $font-size in $display-font-sizes {
+  .#{$prefix}display-#{$display} {
+    @include font-size($font-size);
+    font-family: $display-font-family;
+    font-style: $display-font-style;
+    font-weight: $display-font-weight;
+    line-height: $display-line-height;
+  }
+}
+
+//
+// Emphasis
+//
+.#{$prefix}small {
+  @extend small;
+}
+
+.#{$prefix}mark {
+  @extend mark;
+}
+
+//
+// Lists
+//
+
+.#{$prefix}list-unstyled {
+  @include list-unstyled();
+}
+
+// Inline turns list items into inline-block
+.#{$prefix}list-inline {
+  @include list-unstyled();
+}
+.#{$prefix}list-inline-item {
+  display: inline-block;
+
+  &:not(:last-child) {
+    margin-right: $list-inline-padding;
+  }
+}
+
+
+//
+// Misc
+//
+
+// Builds on `abbr`
+.#{$prefix}initialism {
+  @include font-size($initialism-font-size);
+  text-transform: uppercase;
+}
+
+// Blockquotes
+.#{$prefix}blockquote {
+  margin-bottom: $blockquote-margin-y;
+  @include font-size($blockquote-font-size);
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.#{$prefix}blockquote-footer {
+  margin-top: -$blockquote-margin-y;
+  margin-bottom: $blockquote-margin-y;
+  @include font-size($blockquote-footer-font-size);
+  color: $blockquote-footer-color;
+
+  &::before {
+    content: "\2014\00A0"; // em dash, nbsp
+  }
+}

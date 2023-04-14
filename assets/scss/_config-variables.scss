@@ -1,0 +1,389 @@
+//
+// Variables (Bootstrap Customization)
+// --------------------------------------------------
+
+// Import Bootstrap functions to use inside variables values
+@import '../vendor/bootstrap/scss/functions';
+
+// Prefix for :root CSS variables
+$prefix:                      ldf- !default;
+
+//== Colors
+//
+// Gray and brand colors to use across the Theme.
+
+// Grayscale
+$white:                       #fff !default;
+$gray-100:                    #f3f6ff !default;
+$gray-200:                    #eff2fc !default;
+$gray-300:                    #e2e5f1 !default;
+$gray-400:                    #d4d7e5 !default;
+$gray-500:                    #b4b7c9 !default;
+$gray-600:                    #9397ad !default;
+$gray-700:                    #565973 !default;
+$gray-800:                    #33354d !default;
+$gray-900:                    #0b0f19 !default;
+$black:                       #000 !default;
+
+// Theme colors
+$primary:                     #1f9bde !default;
+$secondary:                   $gray-200 !default;
+$info:		                    #4c82f7 !default;
+$success:                     #22c55e !default;
+$warning:                     #ffba08 !default;
+$danger:                      #ef4444 !default;
+$light:                       $white !default;
+$dark:                        $gray-900 !default;
+
+// Bootstrap's $theme-colors map
+$theme-colors: (
+  'primary':    $primary,
+  'secondary':  $secondary,
+  'success':    $success,
+  'info':       $info,
+  'warning':    $warning,
+  'danger':     $danger,
+  'light':      $light,
+  'dark':       $dark
+) !default;
+
+// Faded colors map
+$theme-faded-colors: (
+  'primary':    rgba($primary, .12),
+  'success':    rgba($success, .12),
+  'info':       rgba($info, .12),
+  'warning':    rgba($warning, .12),
+  'danger':     rgba($danger, .12),
+  'light':      rgba($light, .05),
+  'dark':       rgba($dark, .12)
+) !default;
+
+// Gradients map
+$theme-gradients: (
+  'primary':              linear-gradient(90deg, $primary 0%, #8b5cf6 50%, #d946ef 100%),
+  'primary-translucent':  linear-gradient(180deg, rgba($primary, 0) 0%, rgba($primary, .6) 120%),
+  'dark-translucent':     linear-gradient(180deg, rgba($dark, .58) 0%, rgba($dark, .78) 100%)
+) !default;
+
+// User selection color
+$user-selection-color:        rgba(var(--#{$prefix}primary-rgb), .22) !default;
+
+// Options
+//
+// Modifying Bootstrap global options
+
+$enable-cssgrid:              false !default;
+$enable-rfs:                  true !default;
+$enable-grid-classes:         true !default;
+$enable-important-utilities:  true !default;
+$enable-shadows:              true !default;
+$enable-negative-margins:     false !default;
+
+// Spacing
+$spacer:                      1rem !default;
+
+// Grid settings overrides
+// Modifying default Bootstrap's $grid-breakpoints map
+$grid-breakpoints: (
+  xs: 0,
+  sm: 500px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+) !default;
+
+
+// Grid containers
+// Modifying default Bootstrap's $container-max-widths map (max-width of .container)
+$container-max-widths: (
+  sm: 97%,
+  md: 95%,
+  lg: 95%,
+  xl: 95%,
+  xxl: 1170px
+) !default;
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+$grid-columns:                12 !default;
+$grid-gutter-width:           1.5rem !default;
+$grid-row-columns:            6 !default;
+
+// Body
+$body-color:                                $gray-700 !default;
+$body-bg:                                   $white !default;
+$text-muted:                                var(--#{$prefix}gray-600) !default;
+
+// Links
+$link-color:                                $primary !default;
+$link-decoration:                           underline !default;
+$link-hover-color:                          darken($link-color, 8%) !default;
+$link-hover-decoration:                     none !default;
+$link-transition:                           color .2s ease-in-out !default;
+$emphasized-link-hover-darken-percentage:   0% !default;
+
+// Components
+//
+// Define common padding and border radius sizes and more.
+$border-width:                              1px !default;
+$border-widths: (
+  1: 1px,
+  2: 2px,
+  3: 3px,
+  4: 4px,
+  5: 5px
+) !default;
+$border-color:                              $gray-300 !default;
+$border-light-color:                        rgba($white, .14) !default;
+
+$border-radius:                             .375rem !default;
+$border-radius-lg:                          .5rem !default;
+$border-radius-sm:                          .25rem !default;
+$border-radius-pill:                        50rem !default;
+
+// Border colors map
+$border-colors: (
+  'primary': rgba($primary, .35),
+  'success': rgba($success, .35),
+  'info':    rgba($info, .35),
+  'warning': rgba($warning, .35),
+  'danger':  rgba($danger, .35),
+  'light':   $border-light-color,
+  'dark':    rgba($dark, .35),
+  'white':   rgba($white, .35)
+) !default;
+
+// Theme shadows
+$box-shadow-sm:                             0 .275rem .75rem -.0625rem rgba($gray-900, .06),
+                                            0 .125rem .4rem -.0625rem rgba($gray-900, .03) !default;
+$box-shadow:                                0 .275rem 1.25rem rgba($gray-900, .05),
+                                            0 .25rem .5625rem rgba($gray-900, .03) !default;
+$box-shadow-lg:                             0 .3rem 1.525rem -.375rem rgba($gray-900, .1),
+                                            0 .25rem .8125rem -.125rem rgba($gray-900, .06) !default;
+$box-shadow-inset:                          inset 0 0 0 transparent !default;
+
+$box-shadow-primary:                        0 .5rem 1.125rem -.5rem rgba($primary, .9) !default;
+$box-shadow-secondary:                      0 .5rem 1.125rem -.5rem rgba($gray-900, .15) !default;
+$box-shadow-info:                           0 .5rem 1.125rem -.5rem rgba($info, .9) !default;
+$box-shadow-success:                        0 .5rem 1.125rem -.5rem rgba($success, .9) !default;
+$box-shadow-warning:                        0 .5rem 1.125rem -.5rem rgba($warning, .9) !default;
+$box-shadow-danger:                         0 .5rem 1.125rem -.5rem rgba($danger, .9) !default;
+$box-shadow-dark:                           0 .5rem 1.125rem -.5rem rgba($dark, .9) !default;
+
+$text-shadow:                               0 .0625rem $gray-900 !default;
+
+// Fonts
+// Font, line-height, and color for body text, headings, and more.
+$path-to-fonts:                             'https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap' !default;
+$font-family-sans-serif:                    'Manrope', sans-serif !default;
+
+$font-size-base:                            1rem !default;
+$font-size-xl:                              $font-size-base * 1.25 !default;
+$font-size-lg:                              $font-size-base * 1.125 !default;
+$font-size-sm:                              $font-size-base * .875 !default;
+$font-size-xs:                              $font-size-base * .75 !default;
+
+$font-weight-normal:                        400 !default;
+$font-weight-medium:                        600 !default;
+$font-weight-semibold:                      700 !default;
+$font-weight-bold:                          800 !default;
+
+$line-height-base:                          1.6 !default;
+$line-height-sm:                            1.4 !default;
+$line-height-lg:                            1.8 !default;
+
+$h1-font-size:                              $font-size-base * 2.5 !default;
+$h2-font-size:                              $font-size-base * 2 !default;
+$h3-font-size:                              $font-size-base * 1.75 !default;
+$h4-font-size:                              $font-size-base * 1.5 !default;
+$h5-font-size:                              $font-size-base * 1.25 !default;
+$h6-font-size:                              $font-size-base !default;
+
+// Modifying default Bootstrap's $font-sizes map
+$font-sizes: (
+  1:                                        $h1-font-size,
+  2:                                        $h2-font-size,
+  3:                                        $h3-font-size,
+  4:                                        $h4-font-size,
+  5:                                        $h5-font-size,
+  6:                                        $h6-font-size,
+  'xl':                                     $font-size-xl,
+  'lg':                                     $font-size-lg,
+  'base':                                   $font-size-base,
+  'sm':                                     $font-size-sm,
+  'xs':                                     $font-size-xs
+) !default;
+
+$lead-font-size:                            $font-size-base * 1.5 !default;
+$lead-font-weight:                          $font-weight-normal !default;
+
+$headings-margin-bottom:                    $spacer !default;
+$headings-font-weight:                      $font-weight-bold !default;
+$headings-line-height:                      1.3 !default;
+$headings-color:                            var(--#{$prefix}gray-900) !default;
+
+// Modifying default Bootstrap's $display-font-sizes map
+$display-font-sizes: (
+  1: $font-size-base * 5,
+  2: $font-size-base * 4.5,
+  3: $font-size-base * 4,
+  4: $font-size-base * 3.5,
+  5: $font-size-base * 3,
+  6: $font-size-base * 2.625
+) !default;
+
+$display-font-weight:                       $font-weight-bold !default;
+
+// Paragraphs
+$paragraph-margin-bottom:                   $spacer * 1.25 !default;
+
+// Blockquote
+$blockquote-font-size:                      $font-size-base !default;
+$blockquote-footer-color:                   var(--#{$prefix}gray-600) !default;
+$blockquote-footer-font-size:               $font-size-sm !default;
+
+// Inline list
+$list-inline-padding:                       $spacer !default;
+
+// Horizontal rule
+$hr-margin-y:                               $spacer !default;
+$hr-color:                                  var(--#{$prefix}border-color) !default;
+$hr-opacity:                                1 !default;
+
+// Icon font
+$icons-font-family:                         'FontAwesome' !default;
+
+// Image thumbnails
+$thumbnail-padding:                         .5rem !default;
+$thumbnail-border-width:                    0 !default;
+$thumbnail-border-radius:                   var(--#{$prefix}border-radius-lg) !default;
+$thumbnail-bg:                              var(--#{$prefix}body-bg) !default;
+$thumbnail-dark-mode-bg:                    rgba($white, .1) !default;
+
+// Figures
+$figure-caption-font-size:                  $font-size-sm !default;
+$figure-caption-color:                      var(--#{$prefix}gray-600) !default;
+
+// Buttons + Forms
+$input-btn-padding-y:                       .625rem !default;
+$input-btn-padding-x:                       1.75rem !default;
+$input-btn-font-size:                       $font-size-sm !default;
+$input-btn-focus-width:                     0 !default;
+
+$input-btn-padding-y-sm:                    .475rem !default;
+$input-btn-padding-x-sm:                    1.25rem !default;
+$input-btn-font-size-sm:                    $font-size-xs !default;
+
+$input-btn-padding-y-lg:                    .785rem !default;
+$input-btn-padding-x-lg:                    2rem !default;
+$input-btn-font-size-lg:                    $font-size-base !default;
+
+
+// Buttons
+$btn-color:                                 $white !default;
+$btn-font-weight:                           $font-weight-medium !default;
+$btn-white-space:                           nowrap !default;
+$btn-focus-width:                           0 !default;
+
+$btn-box-shadow:                            unset !default;
+$btn-focus-box-shadow:                      unset !default;
+$btn-active-box-shadow:                     unset !default;
+
+$btn-link-decoration:                       none !default;
+$btn-link-hover-decoration:                 none !default;
+
+$btn-transition:                            color .2s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out, box-shadow .2s ease-in-out !default;
+
+
+// Icon buttons
+$btn-icon-size:                             2.75rem !default;
+$btn-icon-sm-size:                          2.25rem !default;
+$btn-icon-lg-size:                          3.25rem !default;
+$btn-icon-xl-size:                          4.5rem !default;
+
+// Social buttons
+
+$social-buttons: (
+  'airbnb':         #fd5c63,
+  'behance':        #1769ff,
+  'blogger':        #f57d00,
+  'codepen':        #0ebeff,
+  'discord':        #7289da,
+  'dribbble':       #ea4c89,
+  'dropbox':        #007ee5,
+  'facebook':       #1877f2,
+  'flickr':         #0063dc,
+  'foursquare':     #f94877,
+  'gitlab':         #fc6d26,
+  'github':         #4078c0,
+  'google':         #ea4335,
+  'instagram':      #405de6,
+  'kickstarter':    #2bde73,
+  'linkedin':       #0077b5,
+  'medium':         #00ab6c,
+  'messenger':      #0084ff,
+  'ok':             #ed812b,
+  'patreon':        #f96854,
+  'pinterest':      #e60023,
+  'product-hunt':   #da552f,
+  'reddit':         #ff4500,
+  'skype':          #00aff0,
+  'slack':          #611f69,
+  'snapchat':       #fffc00,
+  'stack-overflow': #f48024,
+  'steam':          #00adee,
+  'telegram':       #0088cc,
+  'tiktok':         #fe2c55,
+  'trip-advisor':   #00af87,
+  'tumblr':         #35465c,
+  'twitch':         #9146ff,
+  'twitter':        #1da1f2,
+  'vimeo':          #1ab7ea,
+  'vk':             #45668e,
+  'whatsapp':       #128c7e,
+  'youtube':        #ff0000,
+  'zoom':           #2d8cff,
+) !default;
+
+// Video button
+
+$btn-video-border-radius:                   50% !default;
+$btn-video-bg:                              $white !default;
+$btn-video-color:                           $gray-800 !default;
+$btn-video-box-shadow:                      $box-shadow-sm !default;
+
+$btn-video-hover-bg:                        $primary !default;
+$btn-video-hover-color:                     $white !default;
+$btn-video-hover-box-shadow:                $box-shadow-primary !default;
+
+$btn-video-dark-mode-bg:                    rgba($white, .05) !default;
+$btn-video-dark-mode-color:                 $white !default;
+$btn-video-dark-mode-box-shadow:            none !default;
+$btn-video-dark-mode-hover-bg:              $primary !default;
+$btn-video-dark-mode-hover-color:           $white !default;
+$btn-video-dark-mode-hover-box-shadow:      $box-shadow-primary !default;
+
+
+// Scroll to top button
+
+$btn-scroll-top-size:                       2.75rem !default;
+$btn-scroll-top-icon-font-size:             $font-size-base * 1.5 !default;
+$btn-scroll-top-bg:                         rgba($gray-900, .2) !default;
+$btn-scroll-top-hover-bg:                   rgba($gray-900, .4) !default;
+$btn-scroll-top-color:                      $white !default;
+$btn-scroll-top-hover-color:                $white !default;
+$btn-scroll-top-transition:                 bottom 400ms cubic-bezier(.68, -.55, .265, 1.55), opacity .3s, background-color .25s ease-in-out !default;
+
+$btn-scroll-top-dark-mode-bg:               rgba($white, .15) !default;
+$btn-scroll-top-dark-mode-hover-bg:         rgba($white, .3) !default;
+$btn-scroll-top-dark-mode-color:            $white !default;
+$btn-scroll-top-dark-mode-hover-color:      $white !default;
+
+// Close
+
+$btn-close-width:                           .75em !default;
+$btn-close-focus-shadow:                    none !default;
+$btn-close-transition:                      opacity .25s ease-in-out !default;

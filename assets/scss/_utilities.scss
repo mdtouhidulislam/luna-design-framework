@@ -1,0 +1,477 @@
+//
+// Utilities
+// Extends default Bootstrap utility classes
+// Classes with a purpose to reduce the frequency of
+// highly repetitive declarations
+// --------------------------------------------------
+
+@import '../vendor/bootstrap/scss/functions';
+@import '../vendor/bootstrap/scss/variables';
+@import '../vendor/bootstrap/scss/maps';
+@import '../vendor/bootstrap/scss/mixins';
+@import '../vendor/bootstrap/scss/utilities';
+
+$utilities: map-merge(
+  $utilities,
+  (
+    // scss-docs-start utils-vertical-align
+    "align": map-merge(
+      map-get($utilities, "align"),
+      ( class: #{$prefix}align ),
+    ),
+    // scss-docs-start utils-float
+    "float": map-merge(
+      map-get($utilities, "float"),
+      ( class: #{$prefix}float ),
+    ),
+    // scss-docs-start utils-opacity
+    'opacity': (
+      property: opacity,
+      class: #{$prefix}opacity,
+      values: (
+        8:  .08,
+        10: .1,
+        15: .15,
+        25: .25,
+        35: .35,
+        40: .4,
+        50: .5,
+        60: .6,
+        70: .7,
+        75: .75,
+        80: .8,
+        90: .9,
+        100: 1
+      )
+    ),
+    // scss-docs-start utils-overflow
+    "overflow": map-merge(
+      map-get($utilities, "overflow"),
+      ( class: #{$prefix}overflow ),
+    ),
+    // scss-docs-start utils-display
+    "display": map-merge(
+      map-get($utilities, "display"),
+      ( class: #{$prefix}d ),
+    ),
+    // scss-docs-start utils-shadow
+    'shadow': (
+      property: box-shadow,
+      class: #{$prefix}shadow,
+      values: (
+        null: $box-shadow,
+        sm: $box-shadow-sm,
+        lg: $box-shadow-lg,
+        none: none,
+        'primary': $box-shadow-primary,
+        'secondary': $box-shadow-secondary,
+        'info': $box-shadow-info,
+        'success': $box-shadow-success,
+        'warning': $box-shadow-warning,
+        'danger': $box-shadow-danger,
+        'dark': $box-shadow-dark
+      )
+    ),
+    // scss-docs-start utils-position
+    "position": map-merge(
+      map-get($utilities, "position"),
+      ( class: #{$prefix}position, responsive: true ),
+    ),
+    "top": map-merge(
+      map-get($utilities, "top"),
+      ( class: #{$prefix}top ),
+    ),
+    "bottom": map-merge(
+      map-get($utilities, "bottom"),
+      ( class: #{$prefix}bottom ),
+    ),
+    "start": map-merge(
+      map-get($utilities, "start"),
+      ( class: #{$prefix}start ),
+    ),
+    "end": map-merge(
+      map-get($utilities, "end"),
+      ( class: #{$prefix}end ),
+    ),
+    "translate-middle": map-merge(
+      map-get($utilities, "translate-middle"),
+      ( class: #{$prefix}translate-middle ),
+    ),
+    // scss-docs-start utils-borders
+    "border": map-merge(
+      map-get($utilities, "border"),
+      ( class: #{$prefix}border, responsive: true ),
+    ),
+    "border-top": map-merge(
+      map-get($utilities, "border-top"),
+      ( class: #{$prefix}border-top, responsive: true ),
+    ),
+    "border-end": map-merge(
+      map-get($utilities, "border-end"),
+      ( class: #{$prefix}border-end, responsive: true ),
+    ),
+    "border-bottom": map-merge(
+      map-get($utilities, "border-bottom"),
+      ( class: #{$prefix}border-bottom, responsive: true ),
+    ),
+    "border-start": map-merge(
+      map-get($utilities, "border-start"),
+      ( class: #{$prefix}border-start, responsive: true ),
+    ),
+    "border-color": map-merge(
+      map-get($utilities, "border-color"),
+      ( class: #{$prefix}border ),
+    ),
+    "border-width": map-merge(
+      map-get($utilities, "border-width"),
+      ( class: #{$prefix}border ),
+    ),
+    "border-opacity": map-merge(
+      map-get($utilities, "border-opacity"),
+      ( class: #{$prefix}border-opacity ),
+    ),
+    // scss-docs-start utils-border-radius
+    "rounded": map-merge(
+      map-get($utilities, "rounded"),
+      ( class: #{$prefix}rounded ),
+    ),
+    "rounded-top": map-merge(
+      map-get($utilities, "rounded-top"),
+      (
+        class: #{$prefix}rounded-top,
+        values: map-merge(
+          map-get(map-get($utilities, 'rounded-top'), 'values'),
+          (
+            0: 0
+          )
+        )
+      ),
+    ),
+    "rounded-end": map-merge(
+      map-get($utilities, "rounded-end"),
+      (
+        class: #{$prefix}rounded-end,
+        values: map-merge(
+          map-get(map-get($utilities, 'rounded-end'), 'values'),
+          (
+            0: 0
+          )
+        )
+      ),
+    ),
+    "rounded-bottom": map-merge(
+      map-get($utilities, "rounded-bottom"),
+      (
+        class: #{$prefix}rounded-bottom,
+        values: map-merge(
+          map-get(map-get($utilities, 'rounded-bottom'), 'values'),
+          (
+            0: 0
+          )
+        )
+      ),
+    ),
+    "rounded-start": map-merge(
+      map-get($utilities, "rounded-start"),
+      (
+        class: #{$prefix}rounded-start,
+        values: map-merge(
+          map-get(map-get($utilities, 'rounded-start'), 'values'),
+          (
+            0: 0
+          )
+        )
+      ),
+    ),
+    // scss-docs-start utils-visibility
+    "visibility": map-merge(
+      map-get($utilities, "visibility"),
+      ( class: ldf ),
+    ),
+    // scss-docs-start utils-sizing
+    "width": map-merge(
+      map-get($utilities, "width"),
+      (
+        class: #{$prefix}w,
+        values: map-merge(
+          map-get(map-get($utilities, 'width'), 'values'),
+          (
+            1: 1px,
+            2: 2px,
+            3: 3px,
+            33: 33.33%,
+            auto: auto
+          )
+        )
+      ),
+    ),
+    "max-width": map-merge(
+      map-get($utilities, "max-width"),
+      ( class: #{$prefix}mw ),
+    ),
+    "viewport-width": map-merge(
+      map-get($utilities, "viewport-width"),
+      ( class: #{$prefix}vw ),
+    ),
+    "min-viewport-width": map-merge(
+      map-get($utilities, "min-viewport-width"),
+      ( class: #{$prefix}min-vw ),
+    ),
+    "height": map-merge(
+      map-get($utilities, "height"),
+      (
+        class: #{$prefix}h,
+        values: map-merge(
+          map-get(map-get($utilities, 'height'), 'values'),
+          (
+            1: 1px,
+            auto: auto
+          )
+        )
+      ),
+    ),
+    "max-height": map-merge(
+      map-get($utilities, "max-height"),
+      ( class: #{$prefix}mh ),
+    ),
+    "viewport-height": map-merge(
+      map-get($utilities, "viewport-height"),
+      ( class: #{$prefix}vh ),
+    ),
+    "min-viewport-height": map-merge(
+      map-get($utilities, "min-viewport-height"),
+      ( class: #{$prefix}min-vh ),
+    ),
+    // scss-docs-start utils-flex
+    "flex": map-merge(
+      map-get($utilities, "flex"),
+      ( class: #{$prefix}flex ),
+    ),
+    "flex-direction": map-merge(
+      map-get($utilities, "flex-direction"),
+      ( class: #{$prefix}flex ),
+    ),
+    "flex-grow": map-merge(
+      map-get($utilities, "flex-grow"),
+      ( class: #{$prefix}flex ),
+    ),
+    "flex-shrink": map-merge(
+      map-get($utilities, "flex-shrink"),
+      ( class: #{$prefix}flex ),
+    ),
+    "flex-wrap": map-merge(
+      map-get($utilities, "flex-wrap"),
+      ( class: #{$prefix}flex ),
+    ),
+    "justify-content": map-merge(
+      map-get($utilities, "justify-content"),
+      ( class: #{$prefix}justify-content ),
+    ),
+    "align-items": map-merge(
+      map-get($utilities, "align-items"),
+      ( class: #{$prefix}align-items ),
+    ),
+    "align-content": map-merge(
+      map-get($utilities, "align-content"),
+      ( class: #{$prefix}align-content ),
+    ),
+    "align-self": map-merge(
+      map-get($utilities, "align-self"),
+      ( class: #{$prefix}align-self ),
+    ),
+    "order": map-merge(
+      map-get($utilities, "order"),
+      ( class: #{$prefix}order ),
+    ),
+    // scss-docs-start utils-spacing
+    // Margin utilities
+    "margin": map-merge(
+      map-get($utilities, "margin"),
+      ( class: #{$prefix}m ),
+    ),
+    "margin-x": map-merge(
+      map-get($utilities, "margin-x"),
+      ( class: #{$prefix}mx ),
+    ),
+    "margin-y": map-merge(
+      map-get($utilities, "margin-y"),
+      ( class: #{$prefix}my ),
+    ),
+    "margin-top": map-merge(
+      map-get($utilities, "margin-top"),
+      ( class: #{$prefix}mt ),
+    ),
+    "margin-end": map-merge(
+      map-get($utilities, "margin-end"),
+      ( class: #{$prefix}me ),
+    ),
+    "margin-bottom": map-merge(
+      map-get($utilities, "margin-bottom"),
+      ( class: #{$prefix}mb ),
+    ),
+    "margin-start": map-merge(
+      map-get($utilities, "margin-start"),
+      ( class: #{$prefix}ms ),
+    ),
+    // Padding utilities
+    "padding": map-merge(
+      map-get($utilities, "padding"),
+      ( class: #{$prefix}p ),
+    ),
+    "padding-x": map-merge(
+      map-get($utilities, "padding-x"),
+      ( class: #{$prefix}px ),
+    ),
+    "padding-y": map-merge(
+      map-get($utilities, "padding-y"),
+      ( class: #{$prefix}py ),
+    ),
+    "padding-top": map-merge(
+      map-get($utilities, "padding-top"),
+      ( class: #{$prefix}pt ),
+    ),
+    "padding-end": map-merge(
+      map-get($utilities, "padding-end"),
+      ( class: #{$prefix}pe ),
+    ),
+    "padding-bottom": map-merge(
+      map-get($utilities, "padding-bottom"),
+      ( class: #{$prefix}pb ),
+    ),
+    "padding-start": map-merge(
+      map-get($utilities, "padding-start"),
+      ( class: #{$prefix}ps ),
+    ),
+    "gap": map-merge(
+      map-get($utilities, "gap"),
+      ( class: #{$prefix}gap ),
+    ),
+    // scss-docs-start utils-text
+    "font-family": map-merge(
+      map-get($utilities, "font-family"),
+      ( class: #{$prefix}font ),
+    ),
+    "font-size": map-merge(
+      map-get($utilities, "font-size"),
+      ( class: #{$prefix}fs ),
+    ),
+    "font-style": map-merge(
+      map-get($utilities, "font-style"),
+      ( class: #{$prefix}fst ),
+    ),
+    "font-weight": map-merge(
+      map-get($utilities, "font-weight"),
+      (
+        class: #{$prefix}fw,
+        values: map-merge(
+          map-get(map-get($utilities, 'font-weight'), 'values'),
+          (
+            500: 500,
+            medium: $font-weight-medium,
+            semibold: $font-weight-semibold
+          )
+        )
+      ),
+    ),
+    "line-height": map-merge(
+      map-get($utilities, "line-height"),
+      ( class: #{$prefix}lh ),
+    ),
+    "text-align": map-merge(
+      map-get($utilities, "text-align"),
+      ( class: #{$prefix}text ),
+    ),
+    "text-decoration": map-merge(
+      map-get($utilities, "text-decoration"),
+      ( class: #{$prefix}text-decoration ),
+    ),
+    "text-transform": map-merge(
+      map-get($utilities, "text-transform"),
+      ( class: #{$prefix}text ),
+    ),
+    "white-space": map-merge(
+      map-get($utilities, "white-space"),
+      ( class: #{$prefix}text ),
+    ),
+    "word-wrap": map-merge(
+      map-get($utilities, "word-wrap"),
+      ( class: #{$prefix}text ),
+    ),
+    // scss-docs-start utils-color
+    "color": map-merge(
+      map-get($utilities, "color"),
+      (
+        class: #{$prefix}text,
+        values: map-merge(
+          $theme-colors,
+          (
+            'white': $white,
+            'body': $body-color,
+            'muted': $text-muted,
+            'nav': $nav-link-color,
+            'border': $border-color,
+            'reset': inherit
+          )
+        )
+      ),
+    ),
+    "text-opacity": map-merge(
+      map-get($utilities, "text-opacity"),
+      ( class: #{$prefix}text-opacity ),
+    ),
+    // scss-docs-start utils-bg-color
+    "background-color": map-merge(
+      map-get($utilities, "background-color"),
+      (
+        class: #{$prefix}bg,
+        values: map-merge(
+          map-get(map-get($utilities, 'background-color'), 'values'),
+          (
+            'secondary': $gray-100,
+            'dark':      $gray-900,
+            'black':     $black,
+            'none':      transparent
+          )
+        )
+      ),
+    ),
+    "bg-opacity": map-merge(
+      map-get($utilities, "bg-opacity"),
+      ( class: #{$prefix}bg-opacity ),
+    ),
+    'gradient': (
+      property: background-image,
+      class: #{$prefix}bg,
+      values: (gradient: linear-gradient(180deg, rgba($white, .18), rgba($white, 0)))
+    ),
+    "user-select": map-merge(
+      map-get($utilities, "user-select"),
+      ( class: #{$prefix}user-select ),
+    ),
+    "pointer-events": map-merge(
+      map-get($utilities, "pointer-events"),
+      ( class: #{$prefix}pe ),
+    ),
+    // Background faded colors
+    'background-faded-color': (
+      property: background-color,
+      class: #{$prefix}bg-faded,
+      values: $theme-faded-colors
+    ),
+    // Gradient background
+    'background-gradient': (
+      property: background,
+      class: #{$prefix}bg-gradient,
+      values: $theme-gradients
+    ),
+    // Text shadow
+    'text-shadow': (
+      property: text-shadow,
+      class: #{$prefix}text-shadow,
+      values: (
+        null: $text-shadow
+      )
+    ),
+
+  )
+);

@@ -1,0 +1,48 @@
+/**
+ * Luna Design Framework | Customized Bootstrap 5 Template & UI Kit for LunaSoft Platform
+ * Copyright 2023 LunaSoft
+ * Framework styles
+*/
+
+// Configuration
+//Bootstrap default variable overrides
+@import 'config-variables';
+// Bootstrap default override,  prefix added to classes
+@import 'utilities';
+
+// Bootstrap required parts
+@import '../vendor/bootstrap/scss/functions';
+@import '../vendor/bootstrap/scss/variables';
+@import "../vendor/bootstrap/scss/maps";
+@import "../vendor/bootstrap/scss/mixins";
+@import '../vendor/bootstrap/scss/utilities';
+
+// Optionally include any other parts as needed
+// mixins customized - bootstrap default overwrite, prefix added to classes
+@import 'mixins';
+/*root default*/
+@import "../vendor/bootstrap/scss/root";
+/*root customized - few more css variable added to bootstrap root*/
+@import 'root';
+/*reboot default*/
+@import "../vendor/bootstrap/scss/reboot";
+/*reboot customized - few more css normalize added to bootstrap reboot*/
+@import 'reboot';
+/*type customized - bootstrap default overwrite, added few custom type, prefix added to classes*/
+@import 'type';
+/*images customized - bootstrap default overwrite, prefix added to classes*/
+@import 'images';
+/*containers customized - bootstrap default overwrite, prefix added to classe*/
+@import 'containers';
+/*grid customized -  bootstrap default overwrite, prefix added to classe*/
+@import 'grid';
+/*button default*/
+@import '../vendor/bootstrap/scss/buttons';
+/*Utilities Default*/
+@import '../vendor/bootstrap/scss/utilities/api';
+
+// Layout & Components
+@import 'components';
+
+// custom styles
+@import 'custom';

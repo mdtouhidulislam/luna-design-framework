@@ -1,0 +1,28 @@
+// 
+// custom.scss - Use this to write your custom SCSS
+// --------------------------------------------------
+// Gradient text
+// Gradient text
+.text-gradient-primary {
+    background: linear-gradient(to right, $primary, #8B5CF6, #D946EF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.luna-demo {
+    --luna-demo-padding: 1rem;
+    position: relative;
+    padding: var(--luna-demo-padding);
+    margin: 0 -1.5rem;
+    border: solid #dee2e6;
+    border-width: 1px 0;
+}
+@media (min-width: 768px){
+    .luna-demo {
+        --luna-demo-padding: 1.5rem;
+        margin-right: 0;
+        margin-left: 0;
+        border-width: 1px;
+    }
+}
+
